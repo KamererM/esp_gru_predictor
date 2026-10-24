@@ -1,5 +1,7 @@
 # Leakage-free INT8 GRU on ESP32-S3 — data, code, and device logs
 
+[![DOI](https://zenodo.org/badge/1432525932.svg)](https://doi.org/10.5281/zenodo.23625291)
+
 Companion repository for the manuscript
 
 > M. A. Barulina, M. E. Pedaev. *Leakage-free evaluation of an INT8-quantized GRU for hourly household electricity forecasting on an ESP32-S3 microcontroller: a technical case study.* Submitted to PLOS ONE (2026).

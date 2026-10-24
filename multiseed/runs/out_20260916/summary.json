@@ -1,0 +1,50 @@
+{
+ "seed": 20260916,
+ "init_base": 0,
+ "epochs_run": 34,
+ "best_epoch": 24,
+ "best_val_loss": 0.31160449981689453,
+ "train_seconds": 48.18457794189453,
+ "n_params": 12737,
+ "test_fp32": {
+  "n": 477,
+  "mae_kwh": 0.4181365877139993,
+  "rmse_kwh": 0.588472578250902,
+  "mape_percent": 88.38339856108894,
+  "mape_excluded_count": 0,
+  "r2": 0.4616498956416334
+ },
+ "test_int8": {
+  "n": 477,
+  "mae_kwh": 0.4165654316450815,
+  "rmse_kwh": 0.5865283661210767,
+  "mape_percent": 87.8276971798807,
+  "mape_excluded_count": 0,
+  "r2": 0.4652012516031724
+ },
+ "ext_fp32": {
+  "n": 2008,
+  "mae_kwh": 0.4246933806791486,
+  "rmse_kwh": 0.5836712011251095,
+  "mape_percent": 95.83297917699586,
+  "mape_excluded_count": 0,
+  "r2": 0.43875148993333113
+ },
+ "ext_int8": {
+  "n": 2008,
+  "mae_kwh": 0.42345179135046634,
+  "rmse_kwh": 0.5833572378360524,
+  "mape_percent": 95.08893268199166,
+  "mape_excluded_count": 0,
+  "r2": 0.43935513128074366
+ },
+ "quant": {
+  "input_scale": 0.02158176153898239,
+  "input_zero_point": -80,
+  "output_scale": 0.013851720839738846,
+  "output_zero_point": -41
+ },
+ "int8_vs_fp32_mean_abs_kwh": 0.01335199611491877,
+ "int8_vs_fp32_max_abs_kwh": 0.05966639518737793,
+ "model_bytes": 146168
+}

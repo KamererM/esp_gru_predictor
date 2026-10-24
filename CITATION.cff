@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the article and this archive."
+title: "Leakage-free INT8 GRU on ESP32-S3: data, code, and device logs"
+version: "2.0.0"
+date-released: 2026-10-13
+doi: "10.5281/zenodo.TO-BE-ASSIGNED"
+repository-code: "https://github.com/KamererM/gru_predictor_esp"
+license: MIT
+authors:
+  - family-names: Barulina
+    given-names: Marina A.
+    orcid: "https://orcid.org/0000-0003-3867-648X"
+    affiliation: "Saint Petersburg State University; Perm State University; Institute of Precision Mechanics and Control Problems of the Russian Academy of Sciences"
+  - family-names: Pedaev
+    given-names: M. E.
+    orcid: "https://orcid.org/0009-0008-7037-2973"
+    affiliation: "Perm State University"
+preferred-citation:
+  type: article
+  title: "Leakage-free evaluation of an INT8-quantized GRU for hourly household electricity forecasting on an ESP32-S3 microcontroller: a technical case study"
+  authors:
+    - family-names: Barulina
+      given-names: Marina A.
+    - family-names: Pedaev
+      given-names: M. E.
+  journal: "PLOS ONE"
+  year: 2026
+  notes: "Submitted"

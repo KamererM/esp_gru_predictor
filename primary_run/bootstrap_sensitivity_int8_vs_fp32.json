@@ -1,0 +1,107 @@
+{
+  "24": {
+    "contrast": "INT8 local minus FP32",
+    "definition": "first minus second; negative favors first for error metrics",
+    "method": "moving-block percentile bootstrap",
+    "block_length_hours": 24,
+    "segment_lengths_hours": [
+      37,
+      29,
+      201,
+      204,
+      6
+    ],
+    "short_segment_policy": "segment-stratified resampling; effective block is min(requested block, segment length)",
+    "all_segments_represented_in_each_resample": true,
+    "resamples": 10000,
+    "seed": 20260917,
+    "confidence_level": 0.95,
+    "estimates": {
+      "mae_difference_kwh": {
+        "point_estimate": -0.0015711560689178339,
+        "ci_low": -0.002600784821580293,
+        "ci_high": -0.0006924877345437116
+      },
+      "rmse_difference_kwh": {
+        "point_estimate": -0.0019442121298253179,
+        "ci_low": -0.0029217343827761754,
+        "ci_high": -0.0007834764285949568
+      },
+      "mape_difference_percentage_points": {
+        "point_estimate": -0.5557013812082401,
+        "ci_low": -0.994014230830223,
+        "ci_high": -0.23865089654088456
+      }
+    }
+  },
+  "48": {
+    "contrast": "INT8 local minus FP32",
+    "definition": "first minus second; negative favors first for error metrics",
+    "method": "moving-block percentile bootstrap",
+    "block_length_hours": 48,
+    "segment_lengths_hours": [
+      37,
+      29,
+      201,
+      204,
+      6
+    ],
+    "short_segment_policy": "segment-stratified resampling; effective block is min(requested block, segment length)",
+    "all_segments_represented_in_each_resample": true,
+    "resamples": 10000,
+    "seed": 20260917,
+    "confidence_level": 0.95,
+    "estimates": {
+      "mae_difference_kwh": {
+        "point_estimate": -0.0015711560689178339,
+        "ci_low": -0.0025331760227555165,
+        "ci_high": -0.0010067908081618786
+      },
+      "rmse_difference_kwh": {
+        "point_estimate": -0.0019442121298253179,
+        "ci_low": -0.002871817351613093,
+        "ci_high": -0.0012363062580899424
+      },
+      "mape_difference_percentage_points": {
+        "point_estimate": -0.5557013812082401,
+        "ci_low": -1.0946436394846204,
+        "ci_high": -0.3219803676576497
+      }
+    }
+  },
+  "168": {
+    "contrast": "INT8 local minus FP32",
+    "definition": "first minus second; negative favors first for error metrics",
+    "method": "moving-block percentile bootstrap",
+    "block_length_hours": 168,
+    "segment_lengths_hours": [
+      37,
+      29,
+      201,
+      204,
+      6
+    ],
+    "short_segment_policy": "segment-stratified resampling; effective block is min(requested block, segment length)",
+    "all_segments_represented_in_each_resample": true,
+    "resamples": 10000,
+    "seed": 20260917,
+    "confidence_level": 0.95,
+    "estimates": {
+      "mae_difference_kwh": {
+        "point_estimate": -0.0015711560689178339,
+        "ci_low": -0.0023003199784011135,
+        "ci_high": -0.001476456837209285
+      },
+      "rmse_difference_kwh": {
+        "point_estimate": -0.0019442121298253179,
+        "ci_low": -0.0025296220384471656,
+        "ci_high": -0.0017572088731793696
+      },
+      "mape_difference_percentage_points": {
+        "point_estimate": -0.5557013812082401,
+        "ci_low": -0.8143683078291647,
+        "ci_high": -0.5487054663695132
+      }
+    }
+  }
+}

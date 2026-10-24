@@ -1,0 +1,145 @@
+{
+  "run_id": "56f38c60-e7c8-4ba0-9d07-c6a184fe6680",
+  "config": {
+    "seed": 20260916,
+    "steps": 32,
+    "units": 64,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "batch_size": 32,
+    "max_epochs": 100,
+    "patience": 10,
+    "learning_rate": 0.001,
+    "calibration_samples": 500,
+    "bootstrap_resamples": 10000,
+    "bootstrap_block_length": 48,
+    "mape_epsilon_kwh": 1e-06,
+    "subset_start": "2007-01-01 00:00:00",
+    "subset_end": "2007-06-30 23:59:00"
+  },
+  "input_file": "[LOCAL_AUTHOR_PATH_REDACTED]",
+  "input_sha256": "c79e3e19348bf518748d63455f98b2f09daf9b1a72fa3f42048fadd9a588225e",
+  "data_audit": {
+    "source_rows_total": 260640,
+    "source_rows_in_requested_interval_before_deduplication": 260640,
+    "expected_minute_rows_in_requested_interval": 260640,
+    "requested_subset_start": "2007-01-01 00:00:00",
+    "requested_subset_end": "2007-06-30 23:59:00",
+    "invalid_timestamps_in_source_file": 0,
+    "duplicate_timestamps_in_requested_interval_removed": 0,
+    "non_numeric_power_values_in_requested_interval": 3771,
+    "missing_minutes_after_reindex": 3771,
+    "candidate_hourly_rows": 4344,
+    "complete_hourly_rows_retained": 4269,
+    "incomplete_hourly_rows_removed": 75
+  },
+  "splits": {
+    "train": {
+      "hourly_rows": 2988,
+      "valid_windows": 2796,
+      "hourly_start": "2007-01-01 00:00:00",
+      "hourly_end": "2007-05-08 06:00:00",
+      "first_target": "2007-01-02 08:00:00",
+      "last_target": "2007-05-08 06:00:00"
+    },
+    "validation": {
+      "hourly_rows": 640,
+      "valid_windows": 576,
+      "hourly_start": "2007-05-08 07:00:00",
+      "hourly_end": "2007-06-03 23:00:00",
+      "first_target": "2007-05-09 15:00:00",
+      "last_target": "2007-06-03 23:00:00"
+    },
+    "test": {
+      "hourly_rows": 641,
+      "valid_windows": 477,
+      "hourly_start": "2007-06-04 00:00:00",
+      "hourly_end": "2007-06-30 23:00:00",
+      "first_target": "2007-06-05 08:00:00",
+      "last_target": "2007-06-30 23:00:00"
+    }
+  },
+  "leakage_controls": {
+    "scaler_fit_split": "train",
+    "early_stopping_split": "validation",
+    "final_metrics_split": "test",
+    "int8_calibration_split": "train",
+    "windows_cross_split_boundaries": false,
+    "test_windows_materialized_after_model_artifacts_hashed": true,
+    "fp32_predictions_loaded_from_saved_artifact": true
+  },
+  "scaler": {
+    "mean_kwh": 1.2785696117804553,
+    "std_kwh": 1.074473061836858
+  },
+  "calibration_window_count": 564,
+  "quantization": {
+    "input_dtype": "<class 'numpy.int8'>",
+    "output_dtype": "<class 'numpy.int8'>",
+    "input_scale": 0.02158176153898239,
+    "input_zero_point": -80,
+    "output_scale": 0.013851720839738846,
+    "output_zero_point": -41,
+    "operators": [
+      "ADD",
+      "FULLY_CONNECTED",
+      "LOGISTIC",
+      "MUL",
+      "STRIDED_SLICE",
+      "SUB",
+      "TANH"
+    ],
+    "float_tensor_count": 0,
+    "input_shape": [
+      1,
+      32,
+      1
+    ],
+    "input_shape_signature": [
+      1,
+      32,
+      1
+    ]
+  },
+  "fp32_reload_validation_max_abs_difference_kwh": 0.0,
+  "artifacts": {
+    "fp32_model_sha256": "82687d87546c56989916d735b95fb707abda0b1e589e2831d9da1d701f9b21f1",
+    "int8_model_sha256": "ced2bd0441434481f8813e80dca49931222a8eaebd76b49f67a8cac6e9318bca",
+    "int8_model_bytes": 146168,
+    "test_windows_sha256": "7519b1da22e7a14a7933b88ace40b1326119428aedf239e2129aad749715c319",
+    "test_predictions_sha256": "be29a45e6c2a498038a489128e1fe6ed42677e382071d8e28dab076ec4f2c06d",
+    "golden_vectors_sha256": "274280cb250f45872405e99ddb6708936d29f47663c98a8894a3abfec474e109",
+    "model_data_cc_sha256": "b7ff54a4f21cec00455123398e89f5ced2aec85eea0d1458aa26b427c35e2806",
+    "model_data_h_sha256": "928bb52f95c045f693fc69e467180cd23ab1131de0cc7857e4f37a834a9be3d0",
+    "preprocessing_constants_h_sha256": "e5e06f192894ff54f202e3c8e8b5e3dc1ba539033a0cce991d613cc13d52c466",
+    "requirements_sha256": "66e98a8650189254d184027428a30daf6aae7865e92afed19f345eac319c713a",
+    "pipeline_code_sha256": "31740c771ed6629eb911bfae924839f09b0661bdc74d1040e93b131f0680fb2c"
+  },
+  "environment": {
+    "python": "3.11.16 (main, Aug 13 2026, 09:46:36) [GCC 15.2.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.0.2",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.1",
+      "tensorflow": "2.21.0"
+    },
+    "tensorflow_build": {
+      "cpu_compiler": "clang",
+      "cuda_compute_capabilities": [
+        "sm_60",
+        "sm_70",
+        "sm_80",
+        "sm_89",
+        "compute_90"
+      ],
+      "cuda_version": "12.5.1",
+      "cudnn_version": "9",
+      "is_cuda_build": true,
+      "is_rocm_build": false,
+      "is_tensorrt_build": false
+    }
+  },
+  "_distribution_note": "Only input_file redacted; historical source/model hashes retained."
+}

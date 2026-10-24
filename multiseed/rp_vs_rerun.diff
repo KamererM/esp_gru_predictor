@@ -1,0 +1,55 @@
+--- pipeline/rerun.py	2026-10-14 21:49:59.376232357 +0000
++++ multiseed/rp.py	2026-10-12 19:37:46.189149679 +0000
+@@ -32,6 +32,7 @@
+ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "-1")
+ 
+ import numpy as np
++INIT_BASE = int(os.environ.get("INIT_BASE", "0"))
+ import pandas as pd
+ import tensorflow as tf
+ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+@@ -71,22 +72,22 @@
+         orthogonal = tf.keras.initializers.Orthogonal
+         zeros = tf.keras.initializers.Zeros()
+         self.Wz = self.add_weight(
+-            shape=(features, self.units), name="Wz", initializer=glorot(seed=101)
++            shape=(features, self.units), name="Wz", initializer=glorot(seed=INIT_BASE + 101)
+         )
+         self.Wr = self.add_weight(
+-            shape=(features, self.units), name="Wr", initializer=glorot(seed=102)
++            shape=(features, self.units), name="Wr", initializer=glorot(seed=INIT_BASE + 102)
+         )
+         self.Wh = self.add_weight(
+-            shape=(features, self.units), name="Wh", initializer=glorot(seed=103)
++            shape=(features, self.units), name="Wh", initializer=glorot(seed=INIT_BASE + 103)
+         )
+         self.Uz = self.add_weight(
+-            shape=(self.units, self.units), name="Uz", initializer=orthogonal(seed=201)
++            shape=(self.units, self.units), name="Uz", initializer=orthogonal(seed=INIT_BASE + 201)
+         )
+         self.Ur = self.add_weight(
+-            shape=(self.units, self.units), name="Ur", initializer=orthogonal(seed=202)
++            shape=(self.units, self.units), name="Ur", initializer=orthogonal(seed=INIT_BASE + 202)
+         )
+         self.Uh = self.add_weight(
+-            shape=(self.units, self.units), name="Uh", initializer=orthogonal(seed=203)
++            shape=(self.units, self.units), name="Uh", initializer=orthogonal(seed=INIT_BASE + 203)
+         )
+         self.bz = self.add_weight(shape=(self.units,), name="bz", initializer=zeros)
+         self.br = self.add_weight(shape=(self.units,), name="br", initializer=zeros)
+@@ -343,14 +344,7 @@
+ def evaluate_tflite(
+     model_path: Path, X_raw: np.ndarray, scaler: StandardScaler, warmup: int = 20
+ ) -> tuple[np.ndarray, np.ndarray, dict, np.ndarray, np.ndarray]:
+-    # interpreter = tf.lite.Interpreter(model_path=str(model_path), num_threads=1)
+-    interpreter = tf.lite.Interpreter(
+-        model_path=str(model_path),
+-        num_threads=1,
+-        experimental_op_resolver_type=(
+-        tf.lite.experimental.OpResolverType.BUILTIN_WITHOUT_DEFAULT_DELEGATES
+-        ),
+-    )
++    interpreter = tf.lite.Interpreter(model_path=str(model_path), num_threads=1, experimental_op_resolver_type=tf.lite.experimental.OpResolverType.BUILTIN_WITHOUT_DEFAULT_DELEGATES)
+     interpreter.allocate_tensors()
+     input_info = interpreter.get_input_details()[0]
+     output_info = interpreter.get_output_details()[0]

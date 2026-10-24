@@ -1,0 +1,7 @@
+{
+  "status": "diagnostic_only_no_acceptance_claim",
+  "completed_requests": 96,
+  "output_mismatches": 51,
+  "window_sha256": "274280cb250f45872405e99ddb6708936d29f47663c98a8894a3abfec474e109",
+  "model_sha256": "ced2bd0441434481f8813e80dca49931222a8eaebd76b49f67a8cac6e9318bca"
+}

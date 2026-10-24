@@ -1,0 +1,24 @@
+{
+  "calibration_reconstructed_train_only": true,
+  "calibration_count": 564,
+  "flatbuffer_byte_identical": false,
+  "all_nonempty_buffers_multiset_equal": true,
+  "test_output_q_mismatch": 0,
+  "old_input_quantization": [
+    0.02158176153898239,
+    -80
+  ],
+  "new_input_quantization": [
+    0.02158176153898239,
+    -80
+  ],
+  "old_output_quantization": [
+    0.013851720839738846,
+    -41
+  ],
+  "new_output_quantization": [
+    0.013851720839738846,
+    -41
+  ],
+  "caveat": "Reconstruction of sufficient train-only calibration, not authentication of historical code or index log."
+}

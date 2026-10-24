@@ -1,0 +1,557 @@
+{
+  "run_id": "56f38c60-e7c8-4ba0-9d07-c6a184fe6680",
+  "checks": {
+    "artifact_hashes": {
+      "fp32_model": true,
+      "int8_model": true,
+      "test_windows": true,
+      "test_predictions": true,
+      "golden_vectors": true,
+      "model_data_cc": true,
+      "model_data_h": true,
+      "preprocessing_constants_h": true
+    },
+    "reference_pipeline_hash": false,
+    "firmware_hash": true,
+    "sdkconfig_hash": false,
+    "elf_hash": true,
+    "c_array_matches_model": true,
+    "train_scaler_mean": true,
+    "train_scaler_std": true,
+    "chronological_disjoint_splits": true,
+    "split_counts": true,
+    "all_test_raw_windows": true,
+    "all_test_targets": true,
+    "all_test_timestamps": true,
+    "golden_reconstruction": true,
+    "golden_timestamps": true,
+    "uci_hourly_timestamps": true,
+    "uci_hourly_values": true,
+    "csv_pairing": true,
+    "csv_targets": true
+  },
+  "scope": "Evidence audit, not authentication of the whole historical training process.",
+  "firmware": {
+    "bytes": 1113872,
+    "sha256": "b83a809f2e92b19fd8200f75e86a85dd2ddaf74086c03b340c9344c011b20af0",
+    "descriptor_magic": "3254cdab",
+    "idf_version": "v6.0",
+    "elf_sha256": "d481c3e666baefe94cebee5cd767786f3c8afbb22108cd855665fef19c3f6924",
+    "int8_model_occurrences": 1
+  },
+  "hardware_metadata": {
+    "protocol_version": "gru-esp32-v1",
+    "run_id": "56f38c60-e7c8-4ba0-9d07-c6a184fe6680",
+    "model_sha256": "ced2bd0441434481f8813e80dca49931222a8eaebd76b49f67a8cac6e9318bca",
+    "model_bytes": 146168,
+    "model_data_cc_sha256": "b7ff54a4f21cec00455123398e89f5ced2aec85eea0d1458aa26b427c35e2806",
+    "preprocessing_constants_h_sha256": "e5e06f192894ff54f202e3c8e8b5e3dc1ba539033a0cce991d613cc13d52c466",
+    "training_mean_kwh_float32_hex": "0x1.4750560000000p+0",
+    "training_std_kwh_float32_hex": "0x1.1310aa0000000p+0",
+    "input_scale": 0.02158176153898239,
+    "input_scale_float32_bits": "3cb0cc3c",
+    "input_zero_point": -80,
+    "output_scale": 0.013851720839738846,
+    "output_scale_float32_bits": "3c62f254",
+    "output_zero_point": -41,
+    "timing_field": "execution_time_us",
+    "firmware_commit": "15e4a5015626e639635a8b003d11ad7c3532bd15",
+    "board_or_module": "ESP32-S3",
+    "idf_target": "esp32s3",
+    "cpu_frequency_mhz": 160,
+    "tflm_revision": "espressif/esp-tflite-micro@1.4.1",
+    "operator_resolver_id": "gru_resolver_v1",
+    "arena_capacity_bytes": 262144,
+    "heap_measurement_caps": "MALLOC_CAP_INTERNAL|MALLOC_CAP_8BIT",
+    "min_internal_free_heap_bytes": 16384,
+    "sdkconfig_sha256": "81908759986cdb4de190ba53692f44f7a8408d7385076527cf0263e1dd576ec5",
+    "resolver_source_sha256": "24158b7d3be3db0362ace6588d14af48af7ede637bc966f9b6022b67bf0090f2",
+    "firmware_build_id": "989e41794896bad212523d791d81963dea22802303e4dbb781268ceb14d97957",
+    "firmware_image_bytes": 1113872,
+    "firmware_image_sha256": "b83a809f2e92b19fd8200f75e86a85dd2ddaf74086c03b340c9344c011b20af0",
+    "app_elf_sha256": "d481c3e666baefe94cebee5cd767786f3c8afbb22108cd855665fef19c3f6924",
+    "flash_bytes": 16777216,
+    "psram_bytes": 2097152,
+    "chip_model": 9,
+    "chip_revision": 2,
+    "arena_used_bytes": 171116,
+    "arena_in_psram": true,
+    "free_heap_before_allocate": 327663,
+    "free_heap_after_allocate": 327663
+  },
+  "hashes": {
+    "device_metadata.json": {
+      "sha256": "2a05b2b99ec13ce8b9dbda9757955876ad5a3be67c0c58309a42f28f92fe75aa",
+      "bytes": 1893
+    },
+    "device_metadata_static.json": {
+      "sha256": "495a2b8e2a954ec07b33e55674ad858f366f0342415ab762c40c6517e2042bba",
+      "bytes": 1666
+    },
+    "gru_predictor.bin": {
+      "sha256": "b83a809f2e92b19fd8200f75e86a85dd2ddaf74086c03b340c9344c011b20af0",
+      "bytes": 1113872
+    },
+    "dependencies.lock": {
+      "sha256": "ae8282da56d2b9b00ed2708cee2527217c98bb200d0b092bf4b70cb25d919ba4",
+      "bytes": 1262
+    },
+    "sdkconfig": {
+      "sha256": "72c1275f10d86ccbb109539f9a9bd0b9f74fc9edddc1e0697deef0bb023b5a61",
+      "bytes": 88378
+    },
+    "results_primary/device_metadata_template.json": {
+      "sha256": "752a5ccd285b2a10811b6ad148aa75b015ef9c2e0583393b4e84de1258fb971a",
+      "bytes": 2010
+    },
+    "results_primary/model_data.h": {
+      "sha256": "928bb52f95c045f693fc69e467180cd23ab1131de0cc7857e4f37a834a9be3d0",
+      "bytes": 149
+    },
+    "results_primary/test_windows.npz": {
+      "sha256": "7519b1da22e7a14a7933b88ace40b1326119428aedf239e2129aad749715c319",
+      "bytes": 10337
+    },
+    "results_primary/training_history.csv": {
+      "sha256": "2a4fe714f857cdb061187992c953726f1e19baf212361ec24b4e6be04a0f9f9c",
+      "bytes": 2762
+    },
+    "results_primary/preprocessing_constants.h": {
+      "sha256": "e5e06f192894ff54f202e3c8e8b5e3dc1ba539033a0cce991d613cc13d52c466",
+      "bytes": 262
+    },
+    "results_primary/model_fp32.keras": {
+      "sha256": "82687d87546c56989916d735b95fb707abda0b1e589e2831d9da1d701f9b21f1",
+      "bytes": 183122
+    },
+    "results_primary/golden_vectors.npz": {
+      "sha256": "274280cb250f45872405e99ddb6708936d29f47663c98a8894a3abfec474e109",
+      "bytes": 5773
+    },
+    "results_primary/model_data.cc": {
+      "sha256": "b7ff54a4f21cec00455123398e89f5ced2aec85eea0d1458aa26b427c35e2806",
+      "bytes": 895414
+    },
+    "results_primary/hourly_splits.csv": {
+      "sha256": "c16ecd1e8c6a55c22949b2801284140f090b986784f914ac2ac9be7c3205f59d",
+      "bytes": 195362
+    },
+    "results_primary/bootstrap_sensitivity_int8_vs_fp32.json": {
+      "sha256": "656c5d4d52e2b936ff0a692d0f502f231950b9aee7e8b1b3617a2e3666f41d94",
+      "bytes": 3316
+    },
+    "results_primary/run_manifest.json": {
+      "sha256": "6884a2670fd2e4f59a9663fa736e0dde3877d1faed061f7feee060bfaf99a020",
+      "bytes": 4830
+    },
+    "results_primary/metrics.json": {
+      "sha256": "ede4d87bea8e0859c7c690ae31809763a0cca2916077045e908804d837eed8c2",
+      "bytes": 943
+    },
+    "results_primary/test_predictions.csv": {
+      "sha256": "be29a45e6c2a498038a489128e1fe6ed42677e382071d8e28dab076ec4f2c06d",
+      "bytes": 46019
+    },
+    "results_primary/esp32_test_predictions.csv": {
+      "sha256": "b3f4aaafd3b69d65f5ae7af02465cf1004395d3e1e02993d9b2f4f2226a4ef8c",
+      "bytes": 90999
+    },
+    "results_primary/model_int8.tflite": {
+      "sha256": "ced2bd0441434481f8813e80dca49931222a8eaebd76b49f67a8cac6e9318bca",
+      "bytes": 146168
+    },
+    "results_primary/test_latency.csv": {
+      "sha256": "2823b9dad7e876fd275b9f3617779baef06fecd2c225e888349d71565577435a",
+      "bytes": 16410
+    }
+  },
+  "scaler_recomputed": {
+    "mean": 1.2785696117804553,
+    "std": 1.074473061836858,
+    "all_data_mean": 1.164384047786367,
+    "all_data_std": 1.0141511055009813
+  },
+  "splits": {
+    "test": {
+      "hours": 641,
+      "windows": 477,
+      "start": "2007-06-04 00:00:00",
+      "end": "2007-06-30 23:00:00",
+      "first_target": "2007-06-05T08:00:00.000000000",
+      "last_target": "2007-06-30T23:00:00.000000000"
+    },
+    "train": {
+      "hours": 2988,
+      "windows": 2796,
+      "start": "2007-01-01 00:00:00",
+      "end": "2007-05-08 06:00:00",
+      "first_target": "2007-01-02T08:00:00.000000000",
+      "last_target": "2007-05-08T06:00:00.000000000"
+    },
+    "validation": {
+      "hours": 640,
+      "windows": 576,
+      "start": "2007-05-08 07:00:00",
+      "end": "2007-06-03 23:00:00",
+      "first_target": "2007-05-09T15:00:00.000000000",
+      "last_target": "2007-06-03T23:00:00.000000000"
+    }
+  },
+  "reconstructed_calibration": {
+    "count": 564,
+    "source": "train",
+    "min_target": "2007-01-02T18:00:00.000000000",
+    "max_target": "2007-05-08T04:00:00.000000000",
+    "status": "Reconstructed from reference algorithm; historical index list not retained."
+  },
+  "early_stopping": {
+    "epochs": 34,
+    "best_epoch_zero_based": 23,
+    "best_epoch_one_based": 24,
+    "min_validation_loss": 0.3116044998168945,
+    "epochs_after_best": 10,
+    "configured_patience": 10,
+    "reloaded_validation_mse": 0.31160449981689453,
+    "best_loss_abs_difference": 5.551115123125783e-17
+  },
+  "model": {
+    "parameters": 12737,
+    "fp32_file_bytes": 183122
+  },
+  "uci_hourly_max_abs_difference": 0.0,
+  "uci": {
+    "archive_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+    "source_url": "https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip",
+    "minute_nan_in_original_period": 3771,
+    "full_hour_count_original": 4269
+  },
+  "extension": {
+    "hourly_rows": 2200,
+    "valid_windows": 2008,
+    "first_target": "2007-07-02T08:00:00.000000000",
+    "last_target": "2007-09-30T23:00:00.000000000"
+  },
+  "device_q_reconstruction_max_abs_kwh": 4.440892098500626e-16,
+  "runtime_comparison": {
+    "AUTO": {
+      "n": 477,
+      "local_saved_q_mismatch": 238,
+      "device_reconstructed_q_mismatch": 248,
+      "max_abs_q_difference_device": 3,
+      "input_matches": true,
+      "max_abs_saved_local_kwh_difference": 0.05953323841094971,
+      "details": {
+        "input": {
+          "shape": [
+            1,
+            32,
+            1
+          ],
+          "shape_signature": [
+            1,
+            32,
+            1
+          ],
+          "quantization": [
+            0.02158176153898239,
+            -80
+          ]
+        },
+        "output_quantization": [
+          0.013851720839738846,
+          -41
+        ],
+        "float_tensors": 0,
+        "operators": [
+          "ADD",
+          "DELEGATE",
+          "FULLY_CONNECTED",
+          "LOGISTIC",
+          "MUL",
+          "STRIDED_SLICE",
+          "SUB",
+          "TANH"
+        ]
+      }
+    },
+    "BUILTIN_WITHOUT_DEFAULT_DELEGATES": {
+      "n": 477,
+      "local_saved_q_mismatch": 0,
+      "device_reconstructed_q_mismatch": 228,
+      "max_abs_q_difference_device": 3,
+      "input_matches": true,
+      "max_abs_saved_local_kwh_difference": 0.0,
+      "details": {
+        "input": {
+          "shape": [
+            1,
+            32,
+            1
+          ],
+          "shape_signature": [
+            1,
+            32,
+            1
+          ],
+          "quantization": [
+            0.02158176153898239,
+            -80
+          ]
+        },
+        "output_quantization": [
+          0.013851720839738846,
+          -41
+        ],
+        "float_tensors": 0,
+        "operators": [
+          "ADD",
+          "FULLY_CONNECTED",
+          "LOGISTIC",
+          "MUL",
+          "STRIDED_SLICE",
+          "SUB",
+          "TANH"
+        ]
+      }
+    },
+    "BUILTIN_REF": {
+      "n": 477,
+      "local_saved_q_mismatch": 241,
+      "device_reconstructed_q_mismatch": 217,
+      "max_abs_q_difference_device": 3,
+      "input_matches": true,
+      "max_abs_saved_local_kwh_difference": 0.059533119201660156,
+      "details": {
+        "input": {
+          "shape": [
+            1,
+            32,
+            1
+          ],
+          "shape_signature": [
+            1,
+            32,
+            1
+          ],
+          "quantization": [
+            0.02158176153898239,
+            -80
+          ]
+        },
+        "output_quantization": [
+          0.013851720839738846,
+          -41
+        ],
+        "float_tensors": 0,
+        "operators": [
+          "ADD",
+          "FULLY_CONNECTED",
+          "LOGISTIC",
+          "MUL",
+          "STRIDED_SLICE",
+          "SUB",
+          "TANH"
+        ]
+      }
+    }
+  },
+  "fp32_reproduction_max_abs_kwh": 0.0,
+  "ridge": {
+    "selection": "validation RMSE; train-only fit",
+    "alpha": 100.0,
+    "grid_results": [
+      {
+        "alpha": 0.0,
+        "N": 576,
+        "MAE_kwh": 0.42214153745228306,
+        "RMSE_kwh": 0.5991695744185189,
+        "MAPE_pct": 63.018702269791916,
+        "WAPE_pct": 42.68187839473361,
+        "R2": 0.46442226106851325
+      },
+      {
+        "alpha": 0.01,
+        "N": 576,
+        "MAE_kwh": 0.4221415202944708,
+        "RMSE_kwh": 0.5991689664080556,
+        "MAPE_pct": 63.018823789662235,
+        "WAPE_pct": 42.681876659941864,
+        "R2": 0.4644233480285922
+      },
+      {
+        "alpha": 0.1,
+        "N": 576,
+        "MAE_kwh": 0.4221417307300832,
+        "RMSE_kwh": 0.599163497048543,
+        "MAPE_pct": 63.01998490255222,
+        "WAPE_pct": 42.68189793666169,
+        "R2": 0.4644331257308797
+      },
+      {
+        "alpha": 1.0,
+        "N": 576,
+        "MAE_kwh": 0.42214504827093335,
+        "RMSE_kwh": 0.5991090733390024,
+        "MAPE_pct": 63.03180776887465,
+        "WAPE_pct": 42.68223336651773,
+        "R2": 0.46453041541014706
+      },
+      {
+        "alpha": 10.0,
+        "N": 576,
+        "MAE_kwh": 0.42221550234748506,
+        "RMSE_kwh": 0.5985910054294177,
+        "MAPE_pct": 63.156967361004114,
+        "WAPE_pct": 42.68935683592551,
+        "R2": 0.46545608880884815
+      },
+      {
+        "alpha": 100.0,
+        "N": 576,
+        "MAE_kwh": 0.42410188917132885,
+        "RMSE_kwh": 0.5954004212173166,
+        "MAPE_pct": 64.52189425122677,
+        "WAPE_pct": 42.8800855983843,
+        "R2": 0.47113930835955264
+      },
+      {
+        "alpha": 1000.0,
+        "N": 576,
+        "MAE_kwh": 0.457071540439978,
+        "RMSE_kwh": 0.6083443050058699,
+        "MAPE_pct": 76.33598050876738,
+        "WAPE_pct": 46.21358046045843,
+        "R2": 0.44789471162493466
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "period": "test",
+      "model": "persistence_kwh",
+      "N": 477,
+      "MAE_kwh": 0.4064366177692853,
+      "RMSE_kwh": 0.6579830008026195,
+      "MAPE_pct": 59.00851203030476,
+      "WAPE_pct": 49.7888293472328,
+      "R2": 0.32695874118581947
+    },
+    {
+      "period": "test",
+      "model": "seasonal24_kwh",
+      "N": 477,
+      "MAE_kwh": 0.5711728185727661,
+      "RMSE_kwh": 0.8856302939849742,
+      "MAPE_pct": 102.7235239236606,
+      "WAPE_pct": 69.96915324160169,
+      "R2": -0.21931879509849517
+    },
+    {
+      "period": "test",
+      "model": "ridge_kwh",
+      "N": 477,
+      "MAE_kwh": 0.41451449852172684,
+      "RMSE_kwh": 0.5870121461785642,
+      "MAPE_pct": 82.37094308104363,
+      "WAPE_pct": 50.77837656981822,
+      "R2": 0.46431866284907497
+    },
+    {
+      "period": "test",
+      "model": "fp32_recomputed_kwh",
+      "N": 477,
+      "MAE_kwh": 0.4181365877139993,
+      "RMSE_kwh": 0.588472578250902,
+      "MAPE_pct": 88.38339856108894,
+      "WAPE_pct": 51.222085558600526,
+      "R2": 0.4616498956416334
+    },
+    {
+      "period": "test",
+      "model": "int8_recomputed_kwh",
+      "N": 477,
+      "MAE_kwh": 0.4165654316450815,
+      "RMSE_kwh": 0.5865283661210767,
+      "MAPE_pct": 87.8276971798807,
+      "WAPE_pct": 51.0296176116361,
+      "R2": 0.4652012516031724
+    },
+    {
+      "period": "test",
+      "model": "fp32_recorded_kwh",
+      "N": 477,
+      "MAE_kwh": 0.4181365877139993,
+      "RMSE_kwh": 0.588472578250902,
+      "MAPE_pct": 88.38339856108894,
+      "WAPE_pct": 51.222085558600526,
+      "R2": 0.4616498956416334
+    },
+    {
+      "period": "test",
+      "model": "esp32_recorded_kwh",
+      "N": 477,
+      "MAE_kwh": 0.416729741657555,
+      "RMSE_kwh": 0.5875466530149618,
+      "MAPE_pct": 87.72811604471713,
+      "WAPE_pct": 51.049745727099676,
+      "R2": 0.46334268408548696
+    },
+    {
+      "period": "extension",
+      "model": "persistence_kwh",
+      "N": 2008,
+      "MAE_kwh": 0.4179685928699267,
+      "RMSE_kwh": 0.6690167808595862,
+      "MAPE_pct": 62.541471808508355,
+      "WAPE_pct": 52.48629648648209,
+      "R2": 0.26261772674001593
+    },
+    {
+      "period": "extension",
+      "model": "seasonal24_kwh",
+      "N": 2008,
+      "MAE_kwh": 0.5412663355974324,
+      "RMSE_kwh": 0.8301858727463947,
+      "MAPE_pct": 100.39386205040105,
+      "WAPE_pct": 67.96937820914107,
+      "R2": -0.13545348565037552
+    },
+    {
+      "period": "extension",
+      "model": "ridge_kwh",
+      "N": 2008,
+      "MAE_kwh": 0.41653517169845067,
+      "RMSE_kwh": 0.5787281832996558,
+      "MAPE_pct": 87.90163875503204,
+      "WAPE_pct": 52.30629499862028,
+      "R2": 0.4482174837907631
+    },
+    {
+      "period": "extension",
+      "model": "fp32_recomputed_kwh",
+      "N": 2008,
+      "MAE_kwh": 0.42469338246016386,
+      "RMSE_kwh": 0.5836712005586455,
+      "MAPE_pct": 95.83297964025773,
+      "WAPE_pct": 53.3307601764901,
+      "R2": 0.4387514910227356
+    },
+    {
+      "period": "extension",
+      "model": "int8_recomputed_kwh",
+      "N": 2008,
+      "MAE_kwh": 0.42345179135046634,
+      "RMSE_kwh": 0.5833572378360524,
+      "MAPE_pct": 95.08893268199166,
+      "WAPE_pct": 53.174847698351236,
+      "R2": 0.43935513128074366
+    }
+  ],
+  "analysis_environment": {
+    "python": "3.11.15 (main, Mar 10 2026, 18:16:52) [Clang 21.1.4 ]",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.0.2",
+    "pandas": "2.2.3"
+  }
+}

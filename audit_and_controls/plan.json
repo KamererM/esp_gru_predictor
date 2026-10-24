@@ -1,0 +1,17 @@
+{
+  "plan_created_before_extension_data_analysis": true,
+  "extension_start": "2007-07-01 00:00:00",
+  "extension_end": "2007-09-30 23:59:00",
+  "window_hours": 32,
+  "window_policy": "All inputs and target within split; 33 contiguous complete hours; no interpolation",
+  "gru_policy": "Frozen uploaded FP32 and INT8 artifacts, no training or tuning",
+  "ridge_alpha_grid": [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0],
+  "ridge_selection": "minimum validation RMSE; ascending alpha tie-break",
+  "ridge_scaling": "StandardScaler fitted on train windows only",
+  "ridge_training": "train only; no refit on validation",
+  "primary_forecast_metric": "RMSE",
+  "secondary_metrics": ["MAE", "MAPE", "WAPE", "R2"],
+  "baseline_policy": "persistence input[-1]; seasonal input[-24] on every common window",
+  "interpretation": "New temporal holdout for this analysis; not a preregistered study and not a new household. Authors' prior use of period unknown.",
+  "device_extension": "Not measured until physical-device evaluation; do not substitute local INT8 for ESP32"
+}

@@ -1,0 +1,30 @@
+menu "GRU predictor network settings"
+
+config GRU_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+    help
+        Configure locally with idf.py menuconfig. Do not commit real credentials.
+
+config GRU_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+    help
+        Configure locally with idf.py menuconfig. Do not commit real credentials.
+
+config GRU_TENSOR_ARENA_BYTES
+    int "Tensor arena capacity in bytes"
+    range 65536 1048576
+    default 196608
+    help
+        Tune only after measuring arena_used_bytes with the deployed model.
+
+config GRU_MIN_FREE_HEAP_AFTER_MODEL
+    int "Minimum free internal 8-bit heap after model allocation"
+    range 16384 262144
+    default 65536
+    help
+        Initialization fails below this internal-memory reserve to protect
+        Wi-Fi and HTTP runtime.
+
+endmenu
